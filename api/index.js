@@ -5,12 +5,10 @@ const app = express();
 const cors = require('cors');
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: process.env.CLIENT_URL
 }));
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
-
-const DOMAIN = 'http://192.168.42.11:5173';
 
 const storeItems = new Map([
     [1, { priceInCents: 1000, name: 'Ticket(s)' }]
