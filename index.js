@@ -16,6 +16,10 @@ const storeItems = new Map([
     [1, { priceInCents: 1000, name: 'Ticket(s)' }]
 ]);
 
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
+
 app.post('/create-checkout-session', async(req, res) => {
     try {
         console.log(req.body.items);
@@ -48,4 +52,8 @@ app.post('/create-checkout-session', async(req, res) => {
 
 });
 
-app.listen(1234);
+app.listen(process.env.PORT, () => {
+    console.log(`Server ready on port ${process.env.PORT}`);
+});
+
+module.exports = app;
