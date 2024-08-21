@@ -30,7 +30,7 @@ app.post('/create-checkout-session', async(req, res) => {
                 const storeItem = storeItems.get(item.id);
 
                 return {
-                    price: 'price_1Pq8MxP4LZocQ8UgyRmnkj72', 
+                    price: 'price_1Pq8dQP4LZocQ8Ugn6yE88pq', 
                     quantity: item.quantity
                 };
             }) 
